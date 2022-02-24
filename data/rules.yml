@@ -1,0 +1,60 @@
+version: "3.0"
+
+rules:
+- rule: Activate Infos form
+  steps:
+  - intent: Agilité
+  - action: infos_form
+  - active_loop: infos_form
+
+- rule: submit Infos form
+  condition:
+  - active_loop: infos_form
+  steps:
+  - action: infos_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit
+
+
+- rule: interruption infos_form
+  condition: 
+  #condition that form is active
+  - active_loop: infos_form
+  steps:
+  #the case of an intent greet
+  - intent: greet
+  - action: utter_greet
+  #return to form
+  - action: infos_form
+  - active_loop: infos_form
+  
+- rule: Activate formation form
+  steps:
+  - intent: formation
+  - action: formation_form
+  - active_loop: formation_form
+
+- rule: submit formation form
+  condition:
+  - active_loop: formation_form
+  steps:
+  - action: formation_form
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null
+  - action: utter_submit_formation
+
+
+- rule: interruption formation_form
+  condition: 
+  #condition that form is active
+  - active_loop: formation_form
+  steps:
+  #the case of an intent greet
+  - intent: greet
+  - action: utter_greet
+  #return to form
+  - action: formation_form
+  - active_loop: formation_form

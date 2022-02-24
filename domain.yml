@@ -1,32 +1,199 @@
-intents:
-  - greet
-  - goodbye
-  - affirm
-  - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-
-responses:
-  utter_greet:
-  - text: "Hey! How are you?"
-
-  utter_cheer_up:
-  - text: "Here is something to cheer you up:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
-  utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "Great, carry on!"
-
-  utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, powered by Rasa."
-
+version: '3.0'
 session_config:
   session_expiration_time: 60
   carry_over_slots_to_new_session: true
+intents:
+- Agilité
+- thanks
+- goodbye
+- Equipe
+- greet
+- domaine
+- nb_personne
+- responses
+- AgilitéForm
+- session
+- niveau
+- type_formation
+- formation
+entities:
+- type_formation
+- niveau
+- session
+- domaine
+- equipe
+- nb_personne
+
+slots:
+  type_formation: 
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: type_formation
+  niveau:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: niveau
+  session:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: session
+  equipe:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: equipe
+      intent: Equipe
+  domaine:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: domaine
+  nb_personne:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nb_personne
+  
+responses:
+  utter_greet:
+  - text: Bienvenue, je suis PilotBot l'assistant virtuel du Sofrecom Tunisie.. Je suis ici pour répondre à toute vos demandes !
+  utter_help:
+  - text: Comment puis-je vous aider ?
+    buttons:
+    - title: Formation
+      payload: /formation
+    - title: DevOps
+    - title: Agilité
+      payload: /Agilité
+    - title: Qualité
+    - title: Sécurité
+    - title: Cloud
+    - title: Assistance Technique
+    - title: Open Source
+    - title: Question / Demande / Autre
+
+  
+  utter_ask_type_formation: 
+  - text: Welcome! Quelle formation voulez-vous suivre?
+  utter_ask_niveau: 
+  - text: Quel niveau voulez-vous choisir ?
+    buttons:
+    - title: Débutant
+      payload: /niveau
+    - title: Intermédiaire
+      payload: /niveau
+    - title: Avancé
+      paylaod: /niveau
+  utter_ask_session:
+  - text: Maintenant vous devez choisir une session !
+  utter_submit_formation:
+  - text: Bien noté de notre coté.. Nous reviendrons vers vous trés rapidement pour la confirmation !
+  utter_goodbye:
+  - text: Je vous souhaite une bonne journée !
+  utter_thanks:
+  - text: Je suis ravie de pouvoir vous aider !
+  utter_submit:
+  - text: Est ce que votre équipe se réunit régulièrement pour partager l'avancement?
+    buttons:
+    - title: OUI
+      payload: /responses
+    - title: NON
+      payload: /responses 
+  utter_ask_equipe:
+  - text: Welcome ! Nos coachs agile sont à l'écoute.. Priére de nous fournir le nom de votre équipe !
+  utter_ask_nb_personne:
+  - text: Combien de personnes composent votre équipe ?
+  utter_ask_domaine:
+  - text: Quel est votre domaine?
+  utter_collaboration1:
+  - text: Quelle importance accordez-vous à la construction d'une documentation nécessaire au fonctionnement de l'équipe et des partenaires ?
+    buttons:
+    - title: Pas important
+      payload: /responses
+    - title: Important
+    - title: Trés important
+      payload: /responses
+  utter_collaboration2:
+  - text: Est ce que vous utilisez activement des outils de management visuel ?
+    buttons:
+    - title: OUI
+      payload: /responses
+    - title: NON
+      payload: /responses
+  utter_backlog:
+  - text: Votre backlog est-il à jour ?
+    buttons:
+    - title: OUI
+      payload: /responses
+    - title: NON
+      payload: /responses
+  utter_raffin:
+  - text: Dans quelle mesure votre équipe s'occupe du raffinement de backlog à chaque itération ?
+    buttons:
+    - title: Jamais
+      payload: /responses
+    - title: Rarement
+      payload: /responses
+    - title: De facon occasionnelle
+      payload: /responses
+    - title: Souvent
+      payload: /responses
+    - title: Très souvent
+      payload: /responses
+    - title: Toujours
+      payload: /responses
+  utter_qsEquipe:
+  - text: Est ce que tout les membres de l'équipe sont formées à l'approche agile ?
+    buttons:
+    - title: OUI
+      payload: /responses
+    - title: NON
+      payload: /responses
+  utter_responses:
+  - text: D'accord
+  utter_endQs:
+  - text: Parfait! Merci beaucoup pour votre réactivité votre ticket sera automatiquement crée ..
+  utter_catalogue_formation:
+  - text: "NB: Si vous avez besoin d'une formation veillez vous référer au catalogue des formations !"
+actions:
+- action_unlikely_intent
+- utter_ask_domaine
+- utter_ask_equipe
+- utter_ask_nb_personne
+- utter_backlog
+- utter_catalogue_formation
+- utter_collaboration1
+- utter_collaboration2
+- utter_endQs
+- utter_goodbye
+- utter_greet
+- utter_help
+- utter_raffin
+- utter_responses
+- utter_submit
+- utter_thanks
+- utter_ask_type_formation
+- validate_formation_form
+- validate_agile_form
+- utter_ask_niveau
+forms:
+  infos_form:
+    required_slots:
+    - equipe
+    - nb_personne
+    - domaine
+  
+  formation_form:
+    required_slots:
+    - type_formation
+    - niveau
+    - session

@@ -1,0 +1,341 @@
+version: "3.0"
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hiiiiiii
+    - Bonjour
+    - bonjouuuuur
+    - bnjr
+    - coucou
+    - cc
+    - salut
+    - saluuut
+    - slt
+    - psst
+    - Alloo
+    - saluut
+    - BNJR
+    - hellloooo
+    - rebonjour
+    - bonjour
+- intent: goodbye
+  examples: |
+    - Bonne journée
+    - Au revoir
+    - A Bientot
+    - bye
+    - Bonne soirée
+    - à tout à l'heure
+    - good by
+    - good night
+    - goodbye
+    - bye bye
+    - see you later
+    - à bientot
+    - au revoir
+    - by
+- intent: responses
+  examples: |
+    - oui
+    - OUI
+    - important
+    - non
+    - no
+    - NON
+    - ok
+    - d'accord
+    - great
+    - okay
+    - okey
+    - yes
+    - done
+    - of course
+    - correct
+    - pas du tout
+    - n
+    - never
+    - I don't think so
+    - no way
+    - not really
+- intent: thanks
+  examples: |
+    - merci
+    - Merci beaucoup
+    - Merci, c'est trés gentil
+    - Parfait
+    - C’est génial, merci.
+    - meeercii
+    - meeerciii
+    - merci bien
+    - thnks
+- intent: Equipe
+  examples: |
+    - [Advise](equipe)
+    - [Ambre](equipe)
+    - [TOPO](equipe)
+    - [IGWAN](equipe)
+    - [NewSFC](equipe)
+    - [MOBI](equipe)
+    - [Parnasse](equipe)
+    - [ENOV](equipe)
+- intent: Agilité
+  examples: |
+    - Accompagnement agile des équipes Advise Tunis
+    - Accompagnement agile de l'équipe sur le rôle du SM
+    - facilitation Agile
+    - Accompagnement agile
+    - Accompagnement ou facilitation Agile / QHC
+    - Accompagnement du SM
+    - Animer un atelier Kanban
+    - Accompagnement d'un Scrum Master
+    - Srcum master
+    - SM
+    - PO
+    - Product Owner
+    - rétrospective
+    - revue
+    - Sprint
+    - backlog
+    - Coach Agile Animation d'une rétrospective
+    - Accompagnement du rôle SM
+    - Demande d'atelier pour les SM et PO
+    - Raffinement du Backlog
+    - Coach Agile
+    - Accompagnenet coach agile de l'équipe MOBI
+    - Coach Agile Brainstorming avec l'équipe Ambre
+    - Reprise du rôle SM par l'équipe TOPO
+    - Mise à jour du Scrum Borard pour pouvoir filtrer par Epic
+    - Coach Agile pour accompagner le SM IGWAN
+    - Revue des pratique agiles sur le projet IGWAN
+    - Accompagnement de l'équipe NewSFC pour la reprise du rôle Scrum Master
+    - adapter les pratiques agiles
+    - améliorer les pratiques agiles
+    - conseil ou accompagnement d'un coach agile
+    - je veux avoir un accompagnement d'un coach agile pour notre projet
+    - besoin coach agile
+    - coach agile
+- intent: domaine
+  examples: |
+    - [orange](domaine)
+    - [b2b](domaine)
+    - [dsi](domaine)
+    - [C2S](domaine)
+- intent: nb_personne
+  examples: |
+    - [1](nb_personne)
+    - [2](nb_personne)
+    - [3](nb_personne)
+    - [4](nb_personne)
+    - [5](nb_personne)
+    - [6](nb_personne)
+    - [7](nb_personne)
+    - [3](nb_personne): [Avanc](niveau)
+- intent: formation
+  examples: |
+    - Formation [Kubernetes](type_formation)
+    - Formation [Docker]
+    - Formation [DevSecure JAVA](type_formation)
+    - Formation [Liquibase](type_formation)
+    - Formation [SAFE](type_formation) FOR TEAMS
+    - Formation [Struts 1](type_formation)
+    - Demande de formation [Jira](type_formation)
+    - Demande de formation [Jira Xray](type_formation)
+    - Formation [Git](type_formation)
+    - Formation [Gitlab](type_formation)
+    - Formation [Ansible](type_formation)
+    - Formation [DevSecure PHP](type_formation)
+    - demande de formation [Ansible]
+    - Formation [DevOps](type_formation)
+    - Formation [Git](type_formation) [avancée](niveau)
+    - Formation [DevSecure JAVA](type_formation) JAV
+    - Formation [Gitlab CI](type_formation)
+    - Formation [PL/SQL]
+    - Demande de formation [XRay](type_formation)
+    - Formation [Cloud Foundry](type_formation)
+    - Formation [SAFe](type_formation)
+    - Formation [Clean Code](type_formation)
+    - Formation [Dev Secure](type_formation)
+    - Formation [Cucumber](type_formation)
+    - Formation [PHP Unit]
+    - Formation [jenkins](type_formation)
+    - Formation [GIT-LAB](type_formation)
+    - Formation [SQL](type_formation) [basique](niveau)
+    - Formtion [SQL](type_formation) [avancé](niveau)
+    - Formation [Selenium Foundation A4Q](type_formation)
+    - Formation [ITIL Foundation](type_formation)
+    - DEV SECURE [PHP](type_formation)
+    - Formation [Angular V9](type_formation)
+    - Demande de formation [AB Initio]
+    - Formation [SAFe](type_formation) For Teams
+    - Formation [Scripting Shell](type_formation)
+    - Formation [Robot Framework](type_formation)
+    - Formation [PYTHON](type_formation)
+    - Formation [DJANGO](type_formation)
+    - Organiser des formations entre les référents
+    - Formation [TALEND](type_formation)
+    - Formation [GARAFANA](type_formation)
+    - Formation [Spring Cloud](type_formation) et [Spring Intégration](type_formation)
+    - Demande de formation [PowerShell](type_formation)
+    - Demande de formation [VMWARE](type_formation)
+    - Formation [Robot](type_formation) Framework
+    - Formation [Cloud Foudry](type_formation)
+    - Formation [Scriting Shell](type_formation) [avancé](niveau)
+    - Demande de formation [OscarX](type_formation)
+    - Demande de formation [PHP natif](type_formation) niveau 1
+    - Demande de formation [Jira & Confluence](type_formation)
+    - Formation [Angular 8](type_formation)
+    - Formation [JAVA](type_formation) [Avancé](niveau)
+    - formation [Angular V9](type_formation)
+    - Formation [Git](type_formation) & [Jenkins](type_formation)
+    - Formation [Git](type_formation) [avancé](niveau)
+    - Formation [GCC](type_formation) [Google Cloud Platform](type_formation)
+    - Demande de formation [Jira XRAY](type_formation)
+    - Demande de formation [Talend](type_formation)
+    - Demande de formation [Python](type_formation)
+    - Demande de formation [One Automation](type_formation)
+    - Formation [SQL](type_formation) [avancé](niveau)
+    - Demande de Formation [PMI-ACP](type_formation)
+    - Formation Initiation [Linux](type_formation) & [Scripting Shell](type_formation)
+    - Demande de formation [Teradata](type_formation) [avancé](niveau)
+    - Demande de formation [One Teradata](type_formation)
+    - Demande de formation [Camunda](type_formation)
+    - Demande de formation [Perl](type_formation)
+    - Formation [Kanban](type_formation)
+    - demande de formation [Jenkins](type_formation) pour equipe Click N Run
+    - formation [Jenkins](type_formation)
+    - Demande de formation [SAFe](type_formation)
+    - Formation [Docker](type_formation) pour l'équipe NewSPI
+    - Formation [Vue.js](type_formation)
+    - Formation [Cloud](type_formation) pour l'équipe Symbioz
+    - en tant que responsable de formation SSM, je souhaite planifier une formation [Shell](type_formation) [Avancé](niveau) pour nos collaborateurs en décembre  2020.
+    - Formation [Spring Batch](type_formation)
+    - Formation [Cucumber](type_formation) & [JMeter](type_formation)
+    - On aura besoin de planifier une session de formation [Docker](type_formation) en décembre
+    - On aura besoin de planifier une session de formation [Docker](type_formation) le 23 et 24 Novembre 2020 pour nos collaborateurs
+    - Formation [DevSecure](type_formation)
+    - Demande de formation [Jira & Confluence](type_formation) , TOPO & BDREF
+    - Demande de formation sur le Framework [ZEND]
+    - Formation [Ansible](type_formation) fin Juillet
+    - Formation [sécurité & cryptographie](type_formation)
+    - Formation [Spring Boot](type_formation)
+    - Formation [PostgreSQL](type_formation)
+    - Formation pour Georeso
+    - Formation [DevSec](type_formation) pour Contraste
+    - Demande Formation [Scripting Shell](type_formation) pour l'équipe REMU
+    - Organiser des sessions [Devsecure](type_formation) [Java](type_formation) et [PHP](type_formation) pour former les collaborateurs pas encore formés.
+    - Formation [DevOps SSM School](type_formation)
+    - DEV SECURE [JAVA](type_formation)
+    - Animation d'une session [DevSecure](type_formation)
+- intent: niveau
+  examples: |
+    - [Debutant](niveau)
+    - [Intermédiaire](niveau)
+    - [Avancé](niveau)
+- intent: session
+  examples: |
+    - [janvier](session)
+    - [février](session)
+    - [mars](session)
+    - [avril](session)
+    - [mai](session)
+    - [juin](session)
+    - [juillet](session)
+    - [aout](session)
+    - [septembre](session)
+    - [octobre](session)
+    - [novemvre](session)
+    - [decembre](session)
+    - [mars](session)
+- intent: type_formation
+  examples: |
+    - [Kubernetes](type_formation)
+    - [Docker](type_formation)
+    - [DevSecure JAVA](type_formation)
+    - [Liquibase](type_formation)
+    - [SAFE](type_formation)
+    - [Struts 1](type_formation)
+    - [Jira](type_formation)
+    - [Jira Xray](type_formation)
+    - [Git](type_formation)
+    - [Gitlab](type_formation)
+    - [Ansible](type_formation)
+    - [DevSecure PHP](type_formation)
+    - [DevOps](type_formation)
+    - [Git](type_formation) [avancée](niveau)
+    - [DevSecure JAVA](type_formation) JAV
+    - [Gitlab CI](type_formation)
+    - [PL/SQL]
+    - [XRay](type_formation)
+    - [Cloud Foundry](type_formation)
+    - [SAFe](type_formation)
+    - [Clean Code](type_formation)
+    - [Dev Secure](type_formation)
+    - [Cucumber](type_formation)
+    - [PHP Unit](type_formation)
+    - [jenkins](type_formation)
+    - [GIT-LAB](type_formation)
+    - [SQL](type_formation) [basique](niveau)
+    - Formtion [SQL](type_formation) [avancé](niveau)
+    - Formation [Selenium Foundation A4Q](type_formation)
+    - [ITIL Foundation](type_formation)
+    - [Angular V9](type_formation)
+    - [AB Initio]
+    - Formation [SAFe](type_formation) For Teams
+    - Formation [Scripting Shell](type_formation)
+    - Formation [Robot Framework](type_formation)
+    - Formation [PYTHON](type_formation)
+    - Formation [DJANGO](type_formation)
+    - Formation [TALEND](type_formation)
+    - Formation [GARAFANA](type_formation)
+    - [Spring Cloud](type_formation)
+    - [Spring Intégration](type_formation)
+    - [PowerShell](type_formation)
+    - [VMWARE](type_formation)
+    - [Robot Framework](type_formation)
+    - [Cloud Foudry](type_formation)
+    - [Scripting Shell](type_formation)
+    - [Scriting Shell](type_formation) [avancé](niveau)
+    - [OscarX](type_formation)
+    - [PHP natif](type_formation)
+    - [Jira & Confluence](type_formation)
+    - [Angular 8](type_formation)
+    - [JAVA](type_formation) [Avancé](niveau)
+    - [Git](type_formation) & [Jenkins](type_formation)
+    - [Git](type_formation) [avancé](niveau)
+    - [GCC](type_formation)
+    - [Google Cloud Platform](type_formation)
+    - [Jira XRAY](type_formation)
+    - [Talend](type_formation)
+    - [Python](type_formation)
+    - [One Automation](type_formation)
+    - [SQL](type_formation) [avancé](niveau)
+    - [PMI-ACP](type_formation)
+    - [Linux](type_formation) & [Scripting Shell](type_formation)
+    - [Teradata](type_formation) [avancé](niveau)
+    - [One Teradata](type_formation)
+    - [Camunda](type_formation)
+    - [Perl](type_formation)
+    - [Kanban](type_formation)
+    - [Jenkins](type_formation)
+    - [Docker](type_formation)
+    - [Vue.js](type_formation)
+    - [Cloud](type_formation)
+    - [Shell](type_formation) [Avancé](niveau)
+    - [Spring Batch](type_formation)
+    - [JMeter](type_formation)
+    - [DevSecure](type_formation)
+    - [ZEND](type_formation)
+    - [sécurité & cryptographie](type_formation)
+    - [Spring Boot](type_formation)
+    - [PostgreSQL](type_formation)
+    - [DevSec](type_formation)
+    - [Devsecure](type_formation)
+    - [Java](type_formation)
+    - [PHP](type_formation)
+    - [DevOps SSM School](type_formation)
+    - [DEV SECURE JAVA](type_formation)
+    - [DEV SECURE PHP](type_formation)
+    - [Git](type_formation)

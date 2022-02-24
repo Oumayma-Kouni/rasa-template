@@ -1,0 +1,98 @@
+version: "3.0"
+
+stories:
+
+- story: greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+
+- story: thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- story: goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - intent: Agilité
+  - action: infos_form
+  - active_loop: infos_form
+  - slot_was_set:
+    - requested_slot: equipe
+  - slot_was_set:
+    - equipe: ENOV
+  - slot_was_set:
+    - requested_slot: nb_personne
+  - slot_was_set:
+    - nb_personne: '3'
+  - slot_was_set:
+    - requested_slot: domaine
+  - slot_was_set:
+    - domaine: dsi
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit
+  - intent: responses
+  - action: utter_collaboration1
+  - intent: responses
+  - action: utter_collaboration2
+  - intent: responses
+  - action: utter_backlog
+  - intent: responses
+  - action: utter_raffin
+  - intent: responses
+  - action: utter_qsEquipe
+  - intent: responses
+  - action: utter_endQs
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: interactive_story_1
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - action: utter_help
+  - intent: formation
+  - action: formation_form
+  - active_loop: formation_form
+  - slot_was_set:
+    - requested_slot: type_formation
+  - slot_was_set:
+    - type_formation: Git
+  - slot_was_set:
+    - type_formation: Git
+  - slot_was_set:
+    - requested_slot: niveau
+  - slot_was_set:
+    - niveau: Avanc
+  - slot_was_set:
+    - nb_personne: '3'
+  - slot_was_set:
+    - niveau: Avanc
+  - slot_was_set:
+    - requested_slot: session
+  - slot_was_set:
+    - session: mars
+  - slot_was_set:
+    - session: mars
+  - slot_was_set:
+    - requested_slot: null
+  - active_loop: null
+  - action: utter_submit_formation
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye
